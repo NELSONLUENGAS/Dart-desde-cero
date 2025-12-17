@@ -3,9 +3,9 @@ String capitalizar(String texto) {
   return texto;
 }
 
-String capitalizarMapa(Map<String, String> mapa) {
+Map<String, String> capitalizarMapa(Map<String, String> mapa) {
   mapa['nombre'] = capitalizar(mapa['nombre']!);
-  return '';
+  return mapa;
 }
 
 void main(List<String> args) {
@@ -13,4 +13,9 @@ void main(List<String> args) {
   String nombre2 = capitalizar('Pedro');
 
   Map<String, String> persona = {'nombre': 'Tony'};
+
+  Map<String, String> persona2 = capitalizarMapa({...persona});
+
+  print(persona);
+  print(persona2);
 }
